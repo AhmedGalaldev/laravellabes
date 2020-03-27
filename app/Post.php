@@ -1,17 +1,27 @@
 <?php
 
 namespace App;
+use Cviebrock\EloquentSluggable\Sluggable;
+
+
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
-{   public $timestamps = false;
+{   
+    
+    
+    
+    public $timestamps = false;
     protected $fillable = [
         'title',
         'description',
         'user_id',
         
+        
     ];
+    
+    
     
 
 

@@ -12,6 +12,7 @@
     <tr>
       <th scope="col">ID</th>
       <th scope="col">Title</th>
+      <!-- <th scope="col">slug</th> -->
       <th scope="col">Posted By</th>
       <th scope="col">Created At</th>
       <th scope="col">Actions</th>
@@ -22,6 +23,7 @@
     <tr>
       <th scope="row">{{$post->id}}</th>
       <td>{{$post->title}}</td>
+      <!-- <td>{{$post->slug}}</td> -->
       <td>{{ $post->user ? $post->user->name : 'not exist'}}</td>
       <td>{{$dateFormat}}</td>
       <td>
@@ -44,12 +46,18 @@
        
       </td>
    </tr>
+   
     @endforeach
  
   </tbody>
 </table>
+{{ $posts->links() }}
   </div>
+  
+
+
 </div>
+    
 </div>
    
 @endsection

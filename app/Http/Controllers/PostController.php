@@ -16,6 +16,8 @@ class PostController extends Controller
        
   
         $dateFormat=$dateOfCreatedAt->toDateString();
+        $posts = Post::paginate(3);
+
 
         return view('posts.index',[
             'posts'=>$posts,
@@ -54,13 +56,14 @@ class PostController extends Controller
         //     'title.min'=>'min 3',
         //     'title.required'=>'ener title'
         // ]);
-         
-      
+        
+        
          
          Post::create([
             'title' => $request->title,
             'description' =>  $request->description,
             'user_id' =>  $request->user_id,
+           
         ]);
         return redirect()->route('posts.index');
     }
@@ -99,6 +102,8 @@ class PostController extends Controller
         return redirect()->route('posts.index');    
        
 }
+
+
 
 
 }
