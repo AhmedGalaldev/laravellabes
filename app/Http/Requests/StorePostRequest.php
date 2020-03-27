@@ -25,7 +25,8 @@ class StorePostRequest extends FormRequest
     {
         return [
             'title' => 'required|min : 3',
-            'description' => 'required|min : 5',
+            'description' => 'required|min : 10',
+
         ];
     }
     public function messages(){
