@@ -12,13 +12,13 @@ class PostController extends Controller
 {
     public function index(){
        return PostResource::collection(
-        Post::all()
-           
+        Post::paginate(2)
        );
     }
     public function show($post){
         return new PostResource(
-            Post::find($post)
+          Post::find()
         );
     }
+
 }
