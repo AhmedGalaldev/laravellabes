@@ -20,7 +20,7 @@
 <div class=" mt-5">
 <div class="card w-75">
   <div class="card-body">
-    <h5 class="card-title">Name : {{ $post->user ? $post->user->name : 'not exist'}}</h5>
+    <h5 class="card-title">Name : {{ $post->user() ? $post->user->name : 'not exist'}}</h5>
     <p class="card-text">Email : {{$post->user() ? $post->user->email :'not exist'}}</p>
     <p class="card-text">Created At : {{$post->user() ? $post->user->created_at :'not exist'}}</p>
 
