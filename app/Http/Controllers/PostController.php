@@ -11,7 +11,7 @@ use App\User;
 class PostController extends Controller
 {
     public function index(){
-        $posts=Post::all();
+        $posts=Post::with('user')->get();
         
         $dateOfCreatedAt = new Carbon($posts->get('created_at'));
         
@@ -43,14 +43,8 @@ class PostController extends Controller
     }
     public function store(){
         $request=request();
-        
-         Post::create([
-            'title' => $request->title,
-            'description' =>  $request->description,
-            'user_id' =>  $request->user_id
-            
-             
-        ]);
+       $saveToDB= $request->only(['title', 'description','user_id']);
+         Post::create($saveToDB);
        
         return redirect()->route('posts.index');
     }
