@@ -16,4 +16,9 @@ class PostController extends Controller
            
        );
     }
+    public function show($post){
+        return new PostResource(
+            Post::find($post)
+        );
+    }
 }
